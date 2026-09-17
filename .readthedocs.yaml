@@ -15,8 +15,7 @@ build:
     # golang: "1.23"
 
   commands:
-    - mkdir -p $READTHEDOCS_OUTPUT/html
-    - rsync -ar --exclude="_readthedocs" --exclude=".git" . $READTHEDOCS_OUTPUT/html
+    - python3 -c "import shutil, os; shutil.copytree('.', os.environ['READTHEDOCS_OUTPUT'] + '/html', ignore=shutil.ignore_patterns('_readthedocs', '.git'), dirs_exist_ok=True)"
     # Write down your commands here to:
     #
     #  - Install the dependencies of your project
