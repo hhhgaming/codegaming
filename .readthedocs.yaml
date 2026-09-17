@@ -15,8 +15,8 @@ build:
     # golang: "1.23"
 
   commands:
-    - pip install -r requirements.txt
-    - mkdocs build --site-dir $READTHEDOCS_OUTPUT/html
+    - mkdir -p $READTHEDOCS_OUTPUT/html
+    - cp -r ./* $READTHEDOCS_OUTPUT/html
     # Write down your commands here to:
     #
     #  - Install the dependencies of your project
